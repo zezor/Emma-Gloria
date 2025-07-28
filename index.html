@@ -1,9 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emma & Gloria Wedding Invitation</title>
-  <style>
-   body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma & Gloria Wedding Invitation</title>
+    <style>
+        body {
             margin: 0;
             font-family: 'Great Vibes', cursive, sans-serif;
             background-color: #1a252f;
@@ -16,20 +18,18 @@
             overflow-y: auto;
             text-align: center;
         }
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-    header, section {
-      padding: 2rem;
-      text-align: center;
-    }
-    header {
-      background-color: #fce4ec;
-      background-image: url('https://www.pngmart.com/files/5/Wedding-Flower-PNG-Free-Download.png');
-      background-repeat: no-repeat;
-      background-position: center top;
-      background-size: contain;
-      color: #6a1b9a;
-    }
-    .image-container {
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        header {
+            padding: 2rem;
+            text-align: center;
+            background-color: #fce4ec;
+            background-image: url('https://www.pngmart.com/files/5/Wedding-Flower-PNG-Free-Download.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: contain;
+            color: #6a1b9a;
+        }
+        .image-container {
             border: 15px solid #d4af37;
             border-radius: 10px;
             overflow: hidden;
@@ -41,11 +41,15 @@
             height: auto;
             display: block;
         }
-
-    @keyframes bounce {
+        @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
+        }
+        .scroll-down {
+            font-size: 1.5em;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
         }
         .message {
             background-color: #f5f5f5;
@@ -58,202 +62,168 @@
             font-family: Arial, sans-serif;
             font-size: 1.1em;
         }
-        @media (max-width: 600px) {
-            .header { font-size: 2em; }
-            .image-container img { width: 250px; }
-            .message { width: 90%; }
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
         }
-    
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-    h2 {
-      color: #8e24aa;
-    }
-    .timeline {
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
-      background: #fff0f5;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border: 1px solid #f8bbd0;
-    }
-    .timeline-item {
-      margin: 1rem 0;
-    }
-    .rsvp-form {
-      max-width: 500px;
-      margin: auto;
-      background: #f3e5f5;
-      padding: 2rem;
-      border-radius: 10px;
-      border: 1px solid #ce93d8;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin: 0.5rem 0 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    input[type="radio"], input[type="checkbox"] {
-      width: auto;
-      margin-right: 0.5rem;
-    }
-    button {
-      padding: 1rem 2rem;
-      background-color: #8e24aa;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .footer {
-      margin-top: 3rem;
-      text-align: center;
-      background-color: #fce4ec;
-      padding: 1.5rem;
-      color: #6a1b9a;
-    }
-    .countdown {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-    .map {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-    }
-    .map iframe {
-      width: 90%;
-      max-width: 600px;
-      height: 300px;
-      border: 2px solid #ce93d8;
-      border-radius: 10px;
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .timeline, .rsvp-form {
-        padding: 1rem;
-      }
-    }
-  </style>
+        h2 {
+            color: #8e24aa;
+        }
+        .timeline {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: left;
+            background: #fff0f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #f8bbd0;
+        }
+        .timeline-item {
+            margin: 1rem 0;
+        }
+        .rsvp-form {
+            max-width: 500px;
+            margin: 2rem auto;
+            background: #f3e5f5;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #ce93d8;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+        button {
+            padding: 1rem 2rem;
+            background-color: #8e24aa;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            background-color: #fce4ec;
+            padding: 1.5rem;
+            color: #6a1b9a;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        .map {
+            margin: 2rem auto;
+            display: flex;
+            justify-content: center;
+        }
+        .map iframe {
+            width: 90%;
+            max-width: 600px;
+            height: 300px;
+            border: 2px solid #ce93d8;
+            border-radius: 10px;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .image-container img { width: 250px; }
+            .message, .timeline, .rsvp-form { width: 90%; padding: 1rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Emma & Gloria</h1>
-    <h2>We're Getting Married!</h2>
-    <div class="image-container">
-        <img src="emmaandgloria.jpg" alt="Wedding Photo">
+    <header>
+        <h1>Emma & Gloria</h1>
+        <h2>We're Getting Married!</h2>
+        <div class="image-container">
+            <img src="emmaandgloria.jpg" alt="Wedding Photo">
+        </div>
+        <div class="scroll-down">Scroll down <span>↓</span></div>
+        <p>Join us on <strong>18 October 2025</strong> at <strong>Trinity Methodist Church</strong>, <em>Kwadaso Estate</em></p>
+        <div class="countdown" id="countdown"></div>
+    </header>
+    <section class="timeline">
+        <h2>Event Timeline</h2>
+        <div class="timeline-item"><strong>12:00</strong> – Wedding Ceremony</div>
+        <div class="timeline-item"><strong>13:30</strong> – Reception</div>
+        <div class="timeline-item"><strong>15:00</strong> – First Dance</div>
+        <div class="timeline-item"><strong>16:00</strong> – Dinner</div>
+        <div class="timeline-item"><strong>17:00</strong> – Cake Cutting</div>
+        <div class="timeline-item"><strong>18:00</strong> – Party</div>
+        <div class="timeline-item"><strong>21:00</strong> – Closing</div>
+    </section>
+    <section class="message">
+        <h2>Organizational Info</h2>
+        <p>Questions? Contact our wedding organizer Maria and Mike at: <strong>+31 684 596 5887</strong></p>
+        <p>We welcome creative congratulations and funny stories to share during the celebration!</p>
+    </section>
+    <section class="message">
+        <h2>Dress Code</h2>
+        <p><strong>Women:</strong> Cocktail dresses or suits. Silver is welcome!</p>
+        <p><strong>Men:</strong> Suits, jackets, or shirts in grey or blue tones. Wear comfy shoes!</p>
+    </section>
+    <section class="rsvp-form">
+        <h2>RSVP</h2>
+        <form action="#" method="POST">
+            <label>Your Name:</label>
+            <input type="text" name="name" required />
+            <label>Will you come?</label><br>
+            <input type="radio" name="attendance" value="yes" required /> Yes, I will<br>
+            <input type="radio" name="attendance" value="no" /> Unfortunately, I cannot :(<br>
+            <label>What would you like to drink?</label><br>
+            <input type="checkbox" name="drink" value="Champagne" /> Champagne<br>
+            <input type="checkbox" name="drink" value="White wine" /> White Wine<br>
+            <input type="checkbox" name="drink" value="Red wine" /> Red Wine<br>
+            <input type="checkbox" name="drink" value="Vodka" /> Vodka<br>
+            <input type="checkbox" name="drink" value="Whiskey" /> Whiskey<br>
+            <input type="checkbox" name="drink" value="Martini" /> Martini<br>
+            <input type="checkbox" name="drink" value="No alcohol" /> I do not drink alcohol<br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section class="message">
+        <h2>Support Our New Journey</h2>
+        <p>If you'd like to send us a gift, you can contribute via MTN Mobile Money:</p>
+        <p><strong>Number:</strong> +233547809015<br/>
+           <strong>Name:</strong> Emmanuel Nyamekye Nti</p>
+    </section>
+    <section class="map">
+        <h2>Find Us Here</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3341.123456!2d-1.654321!3d6.654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0!2zNsKwMzknMTcuOCJOIDHCsDM5JzE0LjQiVw!5e0!3m2!1sen!2sgh!4v1722022500000!5m2!1sen!2sgh" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <div class="footer">
+        <p>Hope to see you there! 💖</p>
+        <p>— Emma & Gloria</p>
     </div>
-    <div class="scroll-down">Scroll down <span>↓</span></div>
-    <p>Join us on <strong>27 September 2025</strong> in <strong>Trinity Methodist Church</strong> at <em>Kwadaso Estate</em></p>
-    <div class="countdown" id="countdown"></div>
-  </header>
-<div class="image-container">
-        <img src="emmaandgloria.jpg" alt="Wedding Photo">
-    </div>
-  <section class="timeline">
-    <h2>Event Timeline</h2>
-    <div class="timeline-item"><strong>12:00</strong> – Wedding Ceremony @ El Poble Espanyol</div>
-    <div class="timeline-item"><strong>13:30</strong> – Transfer</div>
-    <div class="timeline-item"><strong>14:00</strong> – Cocktail Hour @ Racó Montblanc Restaurant</div>
-    <div class="timeline-item"><strong>15:00</strong> – First Dance</div>
-    <div class="timeline-item"><strong>15:30</strong> – Dinner</div>
-    <div class="timeline-item"><strong>16:00</strong> – Cake Cutting</div>
-    <div class="timeline-item"><strong>17:00</strong> – Party</div>
-    <div class="timeline-item"><strong>21:00</strong> – Closing</div>
-  </section>
+    <script>
+        const countdown = document.getElementById('countdown');
+        const weddingDate = new Date('2025-10-18T00:00:00 GMT');
 
-  <section>
-    <h2>Organizational Info</h2>
-    <p>Questions? Contact our wedding organizer Maria and Mike at: <strong>+31 684 596 5887</strong></p>
-    <p>We welcome creative congratulations and funny stories to share during the celebration!</p>
-  </section>
+        function updateCountdown() {
+            const now = new Date();
+            const diff = weddingDate - now;
+            if (diff <= 0) {
+                countdown.innerText = "The wedding day is here! 💍";
+                return;
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
 
-  <section>
-    <h2>Dress Code</h2>
-    <p><strong>Women:</strong> Cocktail dresses or suits. Silver is welcome!</p>
-    <p><strong>Men:</strong> Suits, jackets, or shirts in grey or blue tones. Wear comfy shoes!</p>
-  </section>
+            countdown.innerText = `${days} days : ${hours} hours : ${minutes} minutes : ${seconds} seconds`;
+        }
 
-  <section class="rsvp-form">
-    <h2>RSVP</h2>
-    <form action="#" method="POST">
-      <label>Your Name:</label>
-      <input type="text" name="name" required />
-
-      <label>Will you come?</label><br>
-      <input type="radio" name="attendance" value="yes" required /> Yes, I will<br>
-      <input type="radio" name="attendance" value="no" /> Unfortunately, I cannot :(<br>
-
-      <label>What would you like to drink?</label><br>
-      <input type="checkbox" name="drink" value="Champagne" /> Champagne<br>
-      <input type="checkbox" name="drink" value="White wine" /> White Wine<br>
-      <input type="checkbox" name="drink" value="Red wine" /> Red Wine<br>
-      <input type="checkbox" name="drink" value="Vodka" /> Vodka<br>
-      <input type="checkbox" name="drink" value="Whiskey" /> Whiskey<br>
-      <input type="checkbox" name="drink" value="Martini" /> Martini<br>
-      <input type="checkbox" name="drink" value="No alcohol" /> I do not drink alcohol<br>
-
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <section>
-    <h2>Support Our New Journey</h2>
-    <p>If you'd like to send us a gift, you can contribute via MTN Mobile Money:</p>
-    <p><strong>Number:</strong> +233547809015<br/>
-       <strong>Name:</strong> Emmanuel Nyamekye Nti</p>
-  </section>
-
-  <section class="map">
-    <h2>Find Us Here</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.025082316974!2d2.1369372757450157!3d41.36887387130317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498b4a8dfc3f7%3A0x9b16352dfe06fae6!2sPoble%20Espanyol!5e0!3m2!1sen!2ses!4v1722022500000!5m2!1sen!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
-
-  <div class="footer">
-    <p>Hope to see you there! 💖</p>
-    <p>— Emma & Gloria</p>
-  </div>
-
-  <script>
-    const countdown = document.getElementById('countdown');
-    const weddingDate = new Date('2025-09-27T00:00:00');
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = weddingDate - now;
-      if (diff <= 0) {
-        countdown.innerText = "The wedding day is here! 💍";
-        return;
-      }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdown.innerText = `${days} days : ${hours} hours : ${minutes} minutes : ${seconds} seconds`;
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-  <audio id="bg-music" autoplay loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<!-- Optional: Music controls -->
-<div style="position:fixed;bottom:10px;right:10px;">
-  <button onclick="document.getElementById('bg-music').play()">Play</button>
-  <button onclick="document.getElementById('bg-music').pause()">Pause</button>
-</div>
-
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
