@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erika & Kylian Wedding Invitation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fefefe;
+      color: #333;
+    }
+    header, section {
+      padding: 2rem;
+      text-align: center;
+    }
+    header {
+      background-color: #f8f8f8;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      color: #666;
+    }
+    .timeline {
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+      background: #f0f0f0;
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+    .timeline-item {
+      margin: 1rem 0;
+    }
+    .rsvp-form {
+      max-width: 500px;
+      margin: auto;
+      background: #f4f4f4;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      width: auto;
+      margin-right: 0.5rem;
+    }
+    button {
+      padding: 1rem 2rem;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #999;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .timeline, .rsvp-form {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Erika & Kylian</h1>
+    <h2>We're Getting Married!</h2>
+    <p>Join us on <strong>29 August 2026</strong> in <strong>Barcelona</strong> at <em>El Poble Espanyol</em></p>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <section class="timeline">
+    <h2>Event Timeline</h2>
+    <div class="timeline-item"><strong>12:00</strong> – Wedding Ceremony @ El Poble Espanyol</div>
+    <div class="timeline-item"><strong>13:30</strong> – Transfer</div>
+    <div class="timeline-item"><strong>14:00</strong> – Cocktail Hour @ Racó Montblanc Restaurant</div>
+    <div class="timeline-item"><strong>15:00</strong> – First Dance</div>
+    <div class="timeline-item"><strong>15:30</strong> – Dinner</div>
+    <div class="timeline-item"><strong>16:00</strong> – Cake Cutting</div>
+    <div class="timeline-item"><strong>17:00</strong> – Party</div>
+    <div class="timeline-item"><strong>21:00</strong> – Closing</div>
+  </section>
+
+  <section>
+    <h2>Organizational Info</h2>
+    <p>Questions? Contact our wedding organizer Maria at: <strong>+31 684 596 5887</strong></p>
+    <p>We welcome creative congratulations and funny stories to share during the celebration!</p>
+  </section>
+
+  <section>
+    <h2>Dress Code</h2>
+    <p><strong>Women:</strong> Cocktail dresses or suits. Silver is welcome!</p>
+    <p><strong>Men:</strong> Suits, jackets, or shirts in grey or blue tones. Wear comfy shoes!</p>
+  </section>
+
+  <section class="rsvp-form">
+    <h2>RSVP</h2>
+    <form action="#" method="POST">
+      <label>Your Name:</label>
+      <input type="text" name="name" required />
+
+      <label>Will you come?</label><br>
+      <input type="radio" name="attendance" value="yes" required /> Yes, I will<br>
+      <input type="radio" name="attendance" value="no" /> Unfortunately, I cannot :(<br>
+
+      <label>What would you like to drink?</label><br>
+      <input type="checkbox" name="drink" value="Champagne" /> Champagne<br>
+      <input type="checkbox" name="drink" value="White wine" /> White Wine<br>
+      <input type="checkbox" name="drink" value="Red wine" /> Red Wine<br>
+      <input type="checkbox" name="drink" value="Vodka" /> Vodka<br>
+      <input type="checkbox" name="drink" value="Whiskey" /> Whiskey<br>
+      <input type="checkbox" name="drink" value="Martini" /> Martini<br>
+      <input type="checkbox" name="drink" value="No alcohol" /> I do not drink alcohol<br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Support Our New Journey</h2>
+    <p>If you'd like to send us a gift, you can contribute via MTN Mobile Money:</p>
+    <p><strong>Number:</strong> +233 24 123 4567<br/>
+       <strong>Name:</strong> Erika & Kylian Wedding</p>
+  </section>
+
+  <div class="footer">
+    <p>Hope to see you there! 💖</p>
+    <p>— Erika & Kylian</p>
+  </div>
+
+  <script>
+    const countdown = document.getElementById('countdown');
+    const weddingDate = new Date('2026-08-29T00:00:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+      if (diff <= 0) {
+        countdown.innerText = "The wedding day is here! 💍";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdown.innerText = `${days} days : ${hours} hours : ${minutes} minutes : ${seconds} seconds`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
