@@ -1,214 +1,125 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emma & Gloria Wedding Invitation</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff8f5;
-      color: #333;
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-    }
-    header, section {
-      padding: 2rem;
-      text-align: center;
-    }
-    header {
-      background-color: #fce4ec;
-      background-image: url('https://www.pngmart.com/files/5/Wedding-Flower-PNG-Free-Download.png');
-      background-repeat: no-repeat;
-      background-position: center top;
-      background-size: contain;
-      color: #6a1b9a;
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-    h2 {
-      color: #8e24aa;
-    }
-    .timeline {
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
-      background: #fff0f5;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border: 1px solid #f8bbd0;
-    }
-    .timeline-item {
-      margin: 1rem 0;
-    }
-    .rsvp-form {
-      max-width: 500px;
-      margin: auto;
-      background: #f3e5f5;
-      padding: 2rem;
-      border-radius: 10px;
-      border: 1px solid #ce93d8;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin: 0.5rem 0 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    input[type="radio"], input[type="checkbox"] {
-      width: auto;
-      margin-right: 0.5rem;
-    }
-    button {
-      padding: 1rem 2rem;
-      background-color: #8e24aa;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .footer {
-      margin-top: 3rem;
-      text-align: center;
-      background-color: #fce4ec;
-      padding: 1.5rem;
-      color: #6a1b9a;
-    }
-    .countdown {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-    .map {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-    }
-    .map iframe {
-      width: 90%;
-      max-width: 600px;
-      height: 300px;
-      border: 2px solid #ce93d8;
-      border-radius: 10px;
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .timeline, .rsvp-form {
-        padding: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Erika & Kylian's Wedding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Emma & Gloria</h1>
-    <h2>We're Getting Married!</h2>
-    <p>Join us on <strong>27 September 2025</strong> in <strong>Trinity Methodist Church</strong> at <em>Kwadaso Estate</em></p>
-    <div class="countdown" id="countdown"></div>
-  </header>
 
-  <section class="timeline">
-    <h2>Event Timeline</h2>
-    <div class="timeline-item"><strong>12:00</strong> – Wedding Ceremony @ El Poble Espanyol</div>
-    <div class="timeline-item"><strong>13:30</strong> – Transfer</div>
-    <div class="timeline-item"><strong>14:00</strong> – Cocktail Hour @ Racó Montblanc Restaurant</div>
-    <div class="timeline-item"><strong>15:00</strong> – First Dance</div>
-    <div class="timeline-item"><strong>15:30</strong> – Dinner</div>
-    <div class="timeline-item"><strong>16:00</strong> – Cake Cutting</div>
-    <div class="timeline-item"><strong>17:00</strong> – Party</div>
-    <div class="timeline-item"><strong>21:00</strong> – Closing</div>
-  </section>
+<header id="home">
+    <img src="https://www.pngmart.com/files/3/Flower-PNG-Transparent-Image.png" class="floral-decor-top" alt="Flowers">
+    <h1>Erika & Kylian</h1>
+    <p>Dear Family and Friends</p>
+    <p>We are getting married!</p>
+    <p>29 August 2026 • El Poble Espanyol, Barcelona</p>
+</header>
 
-  <section>
-    <h2>Organizational Info</h2>
-    <p>Questions? Contact our wedding organizer Maria and Mike at: <strong>+31 684 596 5887</strong></p>
-    <p>We welcome creative congratulations and funny stories to share during the celebration!</p>
-  </section>
+<nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#countdown">Countdown</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#donation">Donate</a>
+</nav>
 
-  <section>
-    <h2>Dress Code</h2>
-    <p><strong>Women:</strong> Cocktail dresses or suits. Silver is welcome!</p>
-    <p><strong>Men:</strong> Suits, jackets, or shirts in grey or blue tones. Wear comfy shoes!</p>
-  </section>
+<section id="music">
+    <audio controls autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</section>
 
-  <section class="rsvp-form">
+<section id="countdown">
+    <h2>Countdown to the Big Day</h2>
+    <div id="timer">
+        <span id="days">000</span> Days
+        <span id="hours">00</span> Hours
+        <span id="minutes">00</span> Minutes
+        <span id="seconds">00</span> Seconds
+    </div>
+</section>
+
+<section id="schedule">
+    <h2>Event Schedule</h2>
+    <ul>
+        <li>12:00 – Wedding Ceremony – El Poble Espanyol</li>
+        <li>13:30 – Transfer</li>
+        <li>14:00 – Cocktail Hour – Racó Montblanc Restaurant</li>
+        <li>15:00 – First Dance</li>
+        <li>15:30 – Dinner</li>
+        <li>16:00 – Cake Cutting</li>
+        <li>17:00 – Party</li>
+        <li>21:00 – Closing</li>
+    </ul>
+</section>
+
+<section id="gallery">
+    <h2>Our Memories</h2>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/300x200?text=Couple+Photo+1" alt="Photo"><img src="https://via.placeholder.com/300x200?text=Couple+Photo+2" alt="Photo"><img src="https://via.placeholder.com/300x200?text=Couple+Photo+3" alt="Photo"><img src="https://via.placeholder.com/300x200?text=Couple+Photo+4" alt="Photo">
+    </div>
+</section>
+
+<section id="quotes">
+    <blockquote>“A successful marriage requires falling in love many times, always with the same person.” – Mignon McLaughlin</blockquote>
+    <blockquote>“Love is composed of a single soul inhabiting two bodies.” – Aristotle</blockquote>
+</section>
+
+<section id="rsvp">
     <h2>RSVP</h2>
-    <form action="#" method="POST">
-      <label>Your Name:</label>
-      <input type="text" name="name" required />
-
-      <label>Will you come?</label><br>
-      <input type="radio" name="attendance" value="yes" required /> Yes, I will<br>
-      <input type="radio" name="attendance" value="no" /> Unfortunately, I cannot :(<br>
-
-      <label>What would you like to drink?</label><br>
-      <input type="checkbox" name="drink" value="Champagne" /> Champagne<br>
-      <input type="checkbox" name="drink" value="White wine" /> White Wine<br>
-      <input type="checkbox" name="drink" value="Red wine" /> Red Wine<br>
-      <input type="checkbox" name="drink" value="Vodka" /> Vodka<br>
-      <input type="checkbox" name="drink" value="Whiskey" /> Whiskey<br>
-      <input type="checkbox" name="drink" value="Martini" /> Martini<br>
-      <input type="checkbox" name="drink" value="No alcohol" /> I do not drink alcohol<br>
-
-      <button type="submit">Submit</button>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your name" required>
+        <select name="attendance">
+            <option value="yes">Yes, I will</option>
+            <option value="no">Unfortunately, I cannot</option>
+        </select>
+        <label>What would you like to drink?</label>
+        <select name="drink">
+            <option>Champagne</option>
+            <option>White wine</option>
+            <option>Red wine</option>
+            <option>Vodka</option>
+            <option>Whiskey</option>
+            <option>Martini</option>
+            <option>I do not drink alcohol</option>
+        </select>
+        <button type="submit">Submit</button>
     </form>
-  </section>
+</section>
 
-  <section>
-    <h2>Support Our New Journey</h2>
-    <p>If you'd like to send us a gift, you can contribute via MTN Mobile Money:</p>
-    <p><strong>Number:</strong> +233547809015<br/>
-       <strong>Name:</strong> Emmanuel Nyamekye Nti</p>
-  </section>
+<section id="donation">
+    <h2>Gift & Donations</h2>
+    <p>Send your wedding gift or support via MTN Mobile Money:</p>
+    <p><strong>+233 XXX XXX XXX</strong></p>
+</section>
 
-  <section class="map">
-    <h2>Find Us Here</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.025082316974!2d2.1369372757450157!3d41.36887387130317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498b4a8dfc3f7%3A0x9b16352dfe06fae6!2sPoble%20Espanyol!5e0!3m2!1sen!2ses!4v1722022500000!5m2!1sen!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
+<section id="location">
+    <h2>Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
 
-  <div class="footer">
-    <p>Hope to see you there! 💖</p>
-    <p>— Emma & Gloria</p>
-  </div>
+<footer>
+    <img src="https://www.pngmart.com/files/3/Flower-PNG-Transparent-Image.png" class="floral-decor-bottom" alt="Flowers">
+    <p>Hope to see you there! — Erika & Kylian</p>
+</footer>
 
-  <script>
-    const countdown = document.getElementById('countdown');
-    const weddingDate = new Date('2025-09-27T00:00:00');
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = weddingDate - now;
-      if (diff <= 0) {
-        countdown.innerText = "The wedding day is here! 💍";
-        return;
-      }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdown.innerText = `${days} days : ${hours} hours : ${minutes} minutes : ${seconds} seconds`;
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-  <audio id="bg-music" autoplay loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<!-- Optional: Music controls -->
-<div style="position:fixed;bottom:10px;right:10px;">
-  <button onclick="document.getElementById('bg-music').play()">Play</button>
-  <button onclick="document.getElementById('bg-music').pause()">Pause</button>
-</div>
+<script>
+    // Countdown
+    const countDownDate = new Date("Aug 29, 2026 12:00:00").getTime();
+    const timerInterval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        if (distance < 0) clearInterval(timerInterval);
+    }, 1000);
+</script>
 
 </body>
 </html>
