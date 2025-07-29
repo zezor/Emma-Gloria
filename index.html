@@ -150,12 +150,20 @@
             .organizational-images, .dress-code-images { flex-direction: column; align-items: center; }
             .organizational-images img, .dress-code-images img { width: 120px; }
         }
+
+        .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+                         gap:10px; max-width:800px; margin:0 auto;
+                     }
+        .gallery-grid img { width:100%; aspect-ratio:4/3; object-fit:cover; 
+                         border-radius:8px; 
+                        }
     </style>
 </head> 
 <body>
     <header>
         <h1>Emma &  Gloria</h1>
         <h2>27.09.2025</h2>
+        <img class="floral" src="Flowering.png" alt="Floral decoration">
         <!-- <div class="image-container">
             <img src="emmaandgloria.jpg" alt="Wedding Photo">
         </div> -->
@@ -171,18 +179,34 @@
             <p>This autumn, a very special and happy event is going to happen - our wedding! We can't imagine this day without our closest people. So, we're very excited to invite you to join and share this wonderful day with us.</p>
         </div>
     <div class="countdown" id="countdown"></div>
-    <div class="message">
-        <h2>Organizational aspects</h2>
-        <p>If you have any questions, you can always contact the organizer of our wedding - Maria</p>
-        <p><strong>+31 684596887</strong></p>
-        <p>Also, we would be very happy to see creative approaches to congratulations. For example, if you remember a funny story related to us to share with guests and laugh all together.</p>
-        <div class="organizational-images">
-            <img src="https://via.placeholder.com/150x200" alt="Organizational Image 1">
-            <img src="https://via.placeholder.com/150x200" alt="Organizational Image 2">
-        </div>
+
+    <section id="gallery">
+
+    <h2>Our Memories</h2>
+    <div class="gallery-grid">
+      <img src="emmaandgloria.jpg" alt="Our Photo 1">
+      <img src="emmaandgloria.jpg" alt="Our Photo 2">
+      <img src="emmaandgloria.jpg" alt="Our Photo 3">
+      <img src="emmaandgloria.jpg" alt="Our Photo 4">
     </div>
+  </section>
+
+     <section id="schedule">
+    <h2>Event Schedule</h2>
+    <ul>
+      <li>12:00 – Ceremony</li>
+      <li>13:30 – Transfer</li>
+      <li>14:00 – Cocktail</li>
+      <li>15:00 – First Dance</li>
+      <li>15:30 – Dinner</li>
+      <li>16:00 – Cake Cutting</li>
+      <li>17:00 – Party</li>
+      <li>21:00 – Closing</li>
+    </ul>
+  </section>
+
     <div class="message">
-        <h2>Dress code</h2>
+        <h2>Colours</h2>
         <p>We would be very happy if your outfit will be in the colours of the wedding theme.</p>
         <div class="dress-code-colors">
             <div style="background-color: #f8e1e1;"></div>
@@ -219,17 +243,54 @@
             <button type="submit">Submit</button>
         </form>
     </section>
-    <section class="map">
+     <section id="gallery">
+
+    <h2>Our Memories</h2>
+    <div class="gallery-grid">
+      <img src="emmaandgloria.jpg" alt="Our Photo 1">
+      <img src="emmaandgloria.jpg" alt="Our Photo 2">
+      <img src="emmaandgloria.jpg" alt="Our Photo 3">
+      <img src="emmaandgloria.jpg" alt="Our Photo 4">
+    </div>
+  </section>
+
+  <section id="location">
+    <h2>Location</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!...YOUR_MAP_EMBED..."
+      width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+    </iframe>
+  </section>
+
+    <!-- <section class="map">
         <h2>The Location</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.025082316974!2d2.1369372757450157!3d41.36887387130317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498b4a8dfc3f7%3A0x9b16352dfe06fae6!2sPoble%20Espanyol!5e0!3m2!1sen!2ses!4v1722022500000!5m2!1sen!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
+    </section> -->
+
+     <div class="message">
+        <h2>Organizational aspects</h2>
+        <p>If you have any questions, you can always contact the organizer of our wedding - Maria</p>
+        <p><strong>+31 684596887</strong></p>
+        <!-- <p>Also, we would be very happy to see creative approaches to congratulations. For example, if you remember a funny story related to us to share with guests and laugh all together.</p> -->
+        <div class="organizational-images">
+            <img src="https://via.placeholder.com/150x200" alt="Organizational Image 1">
+            <img src="https://via.placeholder.com/150x200" alt="Organizational Image 2">
+        </div>
+    </div>
+    <section id="donation">
+        <h2>Send a Gift</h2>
+        <p>Support us via MTN Mobile Money:</p>
+        <p><strong>+233 24 XXX XXXX</strong></p>
+  </section>
     <div class="message footer">
         <p>Hope to see you there!</p>
-        <p>— Laura & Stephan</p>
+        <p>— Emma & Gloria</p>
     </div>
     <script>
         const countdown = document.getElementById('countdown');
-        const weddingDate = new Date('2025-12-18T00:00:00 GMT');
+        // const weddingDate = new Date('2025-09-27T00:00:00 GMT');
+        const weddingDate = new Date(Date.UTC(2025, 8, 27, 0, 0, 0)); // September 27, 2025
+
 
         function updateCountdown() {
             const now = new Date();
