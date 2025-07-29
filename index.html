@@ -139,6 +139,42 @@
         button:hover {
             background-color: #7b1fa2;
         }
+        .fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #d4af37;
+            color: #1a252f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+        .fab:hover {
+            transform: scale(1.1);
+        }
+        .fab::after {
+            content: 'Music';
+            position: absolute;
+            right: 60px;
+            background: #1a252f;
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: Arial, sans-serif;
+            display: none;
+        }
+        .fab:hover::after {
+            display: block;
+        }
         .map {
             margin: 1rem auto;
             width: 90%;
@@ -190,7 +226,7 @@
                 font-size: 1.25rem;
             }
             .image-container {
-                border-width: 6px;
+                border-width: 0px;
                 width: 95%;
             }
             .message, .rsvp-form, .countdown {
@@ -214,6 +250,18 @@
             input, select, textarea, button {
                 font-size: 0.8rem;
             }
+            .fab {
+                width: 40px;
+                height: 40px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 1rem;
+            }
+            .fab::after {
+                font-size: 0.7rem;
+                right: 50px;
+                padding: 0.15rem 0.4rem;
+            }
         }
     </style>
 </head>
@@ -223,9 +271,13 @@
         <h2>27.09.2025</h2>
         <!-- <img class="floral" src="Flowering.png" alt="Floral decoration"> -->
     </header>
+    <audio id="background-music" autoplay loop muted>
+        <source src="wedding_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="audio-toggle" class="fab" title="Toggle Music">▶</div>
     <div class="image-container">
         <img src="emmaandgloria.jpg" alt="Wedding Photo">
-        <!-- <p style="font-size: 0.8rem; font-style: italic;">Please replace with actual couple photo.</p> -->
     </div>
     <div class="scroll-down">Scroll down <span>↓</span></div>
 
@@ -242,13 +294,12 @@
             <img src="emmaandgloria.jpg" alt="Our Photo 2">
             <img src="emmaandgloria.jpg" alt="Our Photo 3">
             <img src="emmaandgloria.jpg" alt="Our Photo 4">
-            <!-- <p style="font-size: 0.8rem; font-style: italic;">Please replace with actual gallery photos.</p> -->
         </div>
     </section>
 
-    <!-- <section id="schedule">
+    <section id="schedule">
         <h2>Event Schedule</h2>
-        <ul>
+        <!-- <ul>
             <li>12:00 – Ceremony</li>
             <li>13:30 – Transfer</li>
             <li>14:00 – Cocktail</li>
@@ -281,9 +332,9 @@
         </div>
     </section>
 
-    <div class="image-container">
+    <div class="gallery-grid">
         <img src="emmaandgloria.jpg" alt="Wedding Photo">
-        <!-- <p style="font-size: 0.8rem; font-style: italic;">Please replace with actual couple photo.</p> -->
+      
     </div>
 
     <div class="message">
@@ -295,13 +346,14 @@
             <div style="background-color: #d7b9a7;"></div>
             <div style="background-color: #4a4a4a;"></div>
         </div>
-        <div class="gallery-grid">
+    
+            <div class="gallery-grid">
             <img src="emmaandgloria.jpg" alt="Our Photo 1">
             <img src="emmaandgloria.jpg" alt="Our Photo 2">
             <img src="emmaandgloria.jpg" alt="Our Photo 3">
             <img src="emmaandgloria.jpg" alt="Our Photo 4">
-            <!-- <p style="font-size: 0.8rem; font-style: italic;">Please replace with actual gallery photos.</p> -->
         </div>
+    
     </div>
 
     <section id="location">
@@ -318,8 +370,11 @@
         <h2>Organizational Aspects</h2>
         <p>If you have any questions, you can always contact the organizer of our wedding - Maria</p>
         <p><strong>+31 684596887</strong></p>
+        <div class="organizational-images">
+            
+        </div>
     </div>
-      <div class="image-container">
+    <div class="image-container">
         <img src="emmaandgloria.jpg" alt="Wedding Photo">
         <!-- <p style="font-size: 0.8rem; font-style: italic;">Please replace with actual couple photo.</p> -->
     </div>
@@ -354,6 +409,27 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
+        // Audio Control
+        const audio = document.getElementById('background-music');
+        const audioToggle = document.getElementById('audio-toggle');
+        audio.volume = 0.3; // Set low volume for background music
+
+        // Attempt to unmute after page load
+        audio.muted = false;
+        audio.play().catch(() => {
+            audioToggle.textContent = '▶';
+        });
+
+        audioToggle.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                audioToggle.textContent = '❚❚';
+            } else {
+                audio.pause();
+                audioToggle.textContent = '▶';
+            }
+        });
 
         // RSVP Form Submission
         document.getElementById('submit-rsvp').addEventListener('click', () => {
