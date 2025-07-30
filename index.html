@@ -12,6 +12,7 @@
             background-color: #1a252f;
             color: #d4af37;
             display: flex;
+            flex-wrap: wrap;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
@@ -227,12 +228,34 @@
             width: 90%;
             margin: 0.75rem auto;
         }
-        .gallery-grid img {
+            .gallery-grid img {
             width: 100%;
             aspect-ratio: 4/3;
             object-fit: cover;
             border-radius: 6px;
         }
+
+            .gallery-item {
+            background-color: #fff;
+            border-radius: 15px;
+            margin: 10px;
+            overflow: hidden;
+            width: 150px;
+            height: 200px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+            .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+            .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+       }
+
         ul {
             list-style: none;
             padding: 0;
@@ -421,7 +444,14 @@
             <div style="background-color: #4a4a4a;"></div>
         </div>
     </div>
-
+<div style="display: flex; flex-direction: row-reverse; flex-wrap: wrap;">
+  <div class="gallery-item"><img src="emmaandgloria.jpg" alt="Bride"></div>
+  <div class="gallery-item"><img src="emmaandgloria.jpg" alt="Bride"></div> 
+  </div>  
+  <div style="display: flex; flex-direction: row-reverse; flex-wrap: wrap;">
+  <div class="gallery-item"><img src="emmaandgloria.jpg" alt="Bride"></div>
+  <div class="gallery-item"><img src="emmaandgloria.jpg" alt="Bride"></div> 
+  </div>  
     <section id="location">
         <h2>Location</h2>
         <div class="map">
