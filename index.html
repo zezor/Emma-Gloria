@@ -29,18 +29,17 @@
             background-size: 90% auto;
             color: #fff;
             width: 100%;
-            
         }
         h1 {
             font-size: 20px;
             margin: 0.5rem 0;
         }
         h2 {
-            font-size: 1.5rem;  
+            font-size: 1.5rem;
             margin: 0.5rem 0;
         }
         .image-container {
-            border: 8px solid #d4af37;
+            border: 8px solid #1a252f;
             border-radius: 8px;
             overflow: hidden;
             margin: 0.75rem 0;
@@ -54,7 +53,8 @@
             object-fit: cover;
         }
         .scroll-down {
-            font-size: 10rem;
+            width: 20%;
+            font-size: 3rem;
             margin: 0.75rem 0;
             animation: bounce 2s infinite;
         }
@@ -68,13 +68,35 @@
             color: #333;
             padding: 0.75rem;
             border-radius: 8px;
-            width: 90%;
+            width: 20%;
             margin: 0.75rem auto;
             font-family: Arial, sans-serif;
             font-size: 0.9rem;
             position: relative;
         }
         .message::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 20px;
+            height: 20px;
+            background: url('https://img.icons8.com/ios-filled/50/000000/star.png') no-repeat;
+            background-size: contain;
+        }
+
+         .messages {
+            background-color: #1a252f;
+            color: #333;
+            padding: 0.75rem;
+            border-radius: 8px;
+            width: 20%;
+            margin: 0.75rem auto;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        .messages::before {
             content: '';
             position: absolute;
             top: 8px;
@@ -179,7 +201,7 @@
         }
         .map {
             margin: 1rem auto;
-            width: 90%;
+            width: 100%;
         }
         .map iframe {
             width: 100%;
@@ -194,8 +216,8 @@
             margin: 0.4rem 0;
         }
         .dress-code-colors div {
-            width: 25px;
-            height: 25px;
+            width: 50px;
+            height: 50px;
             border-radius: 4px;
         }
         .gallery-grid {
@@ -220,6 +242,71 @@
         li {
             margin: 0.4rem 0;
         }
+        #schedule {
+            width: 20%;
+            margin: 1rem auto;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 4px solid #1a252f;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #schedule h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        #schedule ul {
+            padding: 0;
+            list-style: none;
+        }
+        #schedule li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: #f9f1e7;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        #schedule li:hover {
+            transform: scale(1.02);
+        }
+        #schedule li span.time {
+            font-weight: bold;
+            color: #8e24aa;
+            font-size: 1rem;
+        }
+        #schedule li span.event {
+            color: #333;
+            font-size: 0.9rem;
+        }
+        /* Golden Ribbon Styles */
+        #schedule::before,
+        #schedule::after {
+            content: '';
+            position: absolute;
+            background: linear-gradient(45deg, #d4af37, #f1c40f);
+            height: 20px;
+            width: 120px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+        #schedule::before {
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-5deg);
+        }
+        #schedule::after {
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(5deg);
+        }
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.5rem;
@@ -231,7 +318,7 @@
                 border-width: 0px;
                 width: 95%;
             }
-            .message, .rsvp-form, .countdown {
+            .message, .rsvp-form, .countdown, #schedule {
                 width: 95%;
                 padding: 0.6rem;
             }
@@ -264,6 +351,18 @@
                 right: 50px;
                 padding: 0.15rem 0.4rem;
             }
+            #schedule h2 {
+                font-size: 1.4rem;
+            }
+            #schedule li {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+            #schedule::before,
+            #schedule::after {
+                height: 15px;
+                width: 90px;
+            }
         }
     </style>
 </head>
@@ -294,46 +393,23 @@
     </div>
     <div class="countdown" id="countdown"></div>
 
-    <section id="gallery">
-        <h2>Our Memories</h2>
-        <div class="gallery-grid">
-            <img src="emmaandgloria.jpg" alt="Our Photo 1">
-            <img src="emmaandgloria.jpg" alt="Our Photo 2">
-            <img src="emmaandgloria.jpg" alt="Our Photo 3">
-            <img src="emmaandgloria.jpg" alt="Our Photo 4">
-        </div>
-    </section>
-
     <section id="schedule">
-        <h2>Event Schedule</h2>
-    <section class="rsvp-form">
-        <div class="image-container">
-        <img src="emmaandgloria.jpg" alt="Wedding Photo">
-    </div>
-        <h2>RSVP</h2>
-        <div>
-            <label>Your Name:</label>
-            <input type="text" id="name" required />
-            <label>Will you come?</label><br>
-            <label><input type="radio" name="attendance" value="yes" required /> Yes, I will</label><br>
-            <label><input type="radio" name="attendance" value="no" /> Unfortunately, I cannot</label><br>
-            <label><input type="radio" name="attendance" value="later" /> I will tell you a bit later</label><br>
-            <label>What would you like to drink?</label><br>
-            <label><input type="checkbox" name="drink" value="Champagne" /> Champagne</label><br>
-            <label><input type="checkbox" name="drink" value="White wine" /> White Wine</label><br>
-            <label><input type="checkbox" name="drink" value="Red wine" /> Red Wine</label><br>
-            <label><input type="checkbox" name="drink" value="Vodka" /> Vodka</label><br>
-            <label><input type="checkbox" name="drink" value="Whiskey" /> Whiskey</label><br>
-            <label><input type="checkbox" name="drink" value="Martini" /> Martini</label><br>
-            <label><input type="checkbox" name="drink" value="No alcohol" /> I do not drink alcohol</label><br>
-            <button id="submit-rsvp">Submit</button>
-        </div>
-    </section>
 
     <div class="gallery-grid">
         <img src="emmaandgloria.jpg" alt="Wedding Photo">
-      
     </div>
+        <h2>Programme Outline</h2>
+        <ul>
+            <li><span class="time">12:00</span><span class="event">Ceremony</span></li>
+            <li><span class="time">13:30</span><span class="event">Transfer</span></li>
+            <li><span class="time">14:00</span><span class="event">Cocktail</span></li>
+            <li><span class="time">15:00</span><span class="event">First Dance</span></li>
+            <li><span class="time">15:30</span><span class="event">Dinner</span></li>
+            <li><span class="time">16:00</span><span class="event">Cake Cutting</span></li>
+            <li><span class="time">17:00</span><span class="event">Party</span></li>
+            <li><span class="time">21:00</span><span class="event">Closing</span></li>
+        </ul>
+    </section>
 
     <div class="message">
         <h2>Colours</h2>
@@ -344,14 +420,6 @@
             <div style="background-color: #d7b9a7;"></div>
             <div style="background-color: #4a4a4a;"></div>
         </div>
-    
-            <div class="gallery-grid">
-            <img src="emmaandgloria.jpg" alt="Our Photo 1">
-            <img src="emmaandgloria.jpg" alt="Our Photo 2">
-            <img src="emmaandgloria.jpg" alt="Our Photo 3">
-            <img src="emmaandgloria.jpg" alt="Our Photo 4">
-        </div>
-    
     </div>
 
     <section id="location">
@@ -374,7 +442,7 @@
     </div>
     <div class="image-container">
         <img src="emmaandgloria.jpg" alt="Wedding Photo">
-        <!-- <p style="font-size: 0.8rem; font-style: italic;">Please replace with actual couple photo.</p> -->
+       
     </div>
     <section id="donation">
         <h2>Send a Gift</h2>
