@@ -26,7 +26,8 @@
             text-align: center;
             font-size: larger;
             background-color: #1a252f;
-            background-image: url('https://www.pngmart.com/files/5/Wedding-Flower-PNG-Free-Download.png');
+            background: url('icons8-diamond-ring-50.png');
+            background: url('icons8-diamond-ring-50.png');
             background-repeat: no-repeat;
             background-position: center top;
             background-size: 90% auto;
@@ -88,7 +89,7 @@
             left: 8px;
             width: 20px;
             height: 20px;
-            background: url('https://img.icons8.com/ios-filled/50/000000/star.png') no-repeat;
+            background: url('icons8-two-hearts-50.png') no-repeat;
             background-size: contain;
         }
 
@@ -110,7 +111,7 @@
             left: 8px;
             width: 20px;
             height: 20px;
-            background: url('https://img.icons8.com/ios-filled/50/000000/star.png') no-repeat;
+            background: url('icons8-flower-bouquet-50.png') no-repeat;
             background-size: contain;
         }
         .organizational-images, .dress-code-images {
@@ -399,6 +400,28 @@
                 width: 90px;
             }
         }
+
+        .flower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url('https://www.transparenttextures.com/patterns/small-flowers.png') no-repeat;
+            background-size: contain;
+            animation: float 10s infinite;
+            z-index: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-100px); }
+        }
+        .flower:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .flower:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .flower:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .flower:nth-child(4) { left: 40%; animation-delay: 6s; }
+        .flower:nth-child(5) { left: 50%; animation-delay: 1s; }
+        .flower:nth-child(6) { left: 60%; animation-delay: 3s; }
+        .flower:nth-child(7) { left: 70%; animation-delay: 5s; }
+        .flower:nth-child(8) { left: 80%; animation-delay: 7s; }
     </style>
 
 </head>
@@ -498,7 +521,6 @@
         <p>Hope to see you there!</p>
         <p>— Emma & Gloria</p>
     </div>
-
     <script>
         const countdown = document.getElementById('countdown');
         const weddingDate = new Date(Date.UTC(2025, 8, 27, 0, 0, 0)); // September 27, 2025
