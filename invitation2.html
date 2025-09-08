@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma & Gloria's Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="responsive_styles.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Great Vibes', cursive, sans-serif;
+            background-color: #ededed;
+            background-color: linear-gradient(130deg, #3d0808, #470d0d, #8db4b4, #2626ac);
+            
+            /* background: linear-gradient(135deg, #013e6a, #013e6a, #419ad6, #01186a);
+            background: linear-gradient(135deg, #f8e1e1, #493f07, #00B1FF, #1800ad); */
+            color: #d4af37;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto;
+            text-align: center;
+        }
+        header {
+            padding: 1rem;
+            text-align: center;
+            font-size: larger;
+            
+            background-color: #1a252f;
+            background-color: #ededed;
+            background-color: linear-gradient(90deg, #000000, #3533cd);
+            
+            background: url('icons8-diamond-ring-50.png') no-repeat;
+            background: url('icons8-diamond-ring-50.png') no-repeat;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 90% auto;
+            color: #1a252f;
+            width: 100%;
+        }
+        h1 {
+            font-size: 20px;
+            margin: 0.5rem 0;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        .image-container {
+            /* background-image: url("emmaandgloria.jpg");
+            background-size: cover;
+            background-position: center; */
+            /* border: 8px solid #1a252f; */
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 0.75rem 0;
+            box-shadow: 0 0 8px rgba(15, 12, 1, 0.5);
+            width: 20%;
+            /* opacity: 0.4; */
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .scroll-down {
+            width: 20%;
+            font-size: 3rem;
+            margin: 0.75rem 0;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+        .message {
+            background-color: #ddcdcd;
+            color: #333;
+             color: #1a252f;
+            padding: 0.75rem;
+            border-radius: 8px;
+            width: 20%;
+            margin: 0.75rem auto;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        .message::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 20px;
+            height: 20px;
+            background: url('icons8-two-hearts-50.png') no-repeat;
+            background-size: contain;
+        }
+
+         .messages {
+            background-color: #1a252f;
+            background-color: #ededed;
+            color: #1a252f;
+            padding: 0.75rem;
+            border-radius: 8px;
+            width: 20%;
+            margin: 0.75rem auto;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        .messages::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 20px;
+            height: 20px;
+            background: url('icons8-flower-bouquet-50.png') no-repeat;
+            background-size: contain;
+        }
+        .organizational-images, .dress-code-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.75rem 0;
+        }
+        .organizational-images img, .dress-code-images img {
+            border: 6px solid #d4af37;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 120px;
+            height: auto;
+            box-shadow: 0 0 4px rgba(212, 175, 55, 0.5);
+        }
+        .countdown {
+            font-size: 3rem;
+            margin: 0.75rem 0;
+            font-weight: bold;
+            background-color: #1a252f;
+            background-color: #ededed;
+            padding: 0.5rem;
+            border-radius: 4px;
+            color: #1a252f;
+            width: 90%;
+        }
+        .rsvp-form {
+            width: 90%;
+            margin: 1rem auto;
+            background: #5a3f5e;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid #1a252f;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.4rem;
+            margin: 0.4rem 0 0.6rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 0.85rem;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.4rem;
+        }
+        button {
+            padding: 0.6rem 1.2rem;
+            background-color: #8e24aa;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        button:hover {
+            background-color: #7b1fa2;
+        }
+        .fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #d4af37;
+            color: #1a252f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+        .fab:hover {
+            transform: scale(1.1);
+        }
+        .fab::after {
+            content: 'Music';
+            position: absolute;
+            right: 60px;
+            background: #1a252f;
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: Arial, sans-serif;
+            display: none;
+        }
+        .fab:hover::after {
+            display: block;
+        }
+        .map {
+            margin: 1rem auto;
+            width: 100%;
+        }
+        .map iframe {
+            width: 100%;
+            height: 180px;
+            border: 2px solid #ce93d8;
+            border-radius: 8px;
+        }
+        .dress-code-colors {
+            display: flex;
+            justify-content: center;
+            gap: 0.4rem;
+            margin: 0.4rem 0;
+        }
+        .dress-code-colors div {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 0.5rem;
+            width: 20%;
+            margin: 0.75rem auto;
+        }
+            .gallery-grid img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+            .gallery-item {
+            background-color: #fff;
+            border-radius: 15px;
+            margin: 10px;
+            overflow: hidden;
+            width: 150px;
+            height: 200px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+            .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+            .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+       }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+        }
+        li {
+            margin: 0.4rem 0;
+        }
+        #schedule {
+            /* background-image: url("emmaandgloria.jpg");
+            background-size: cover;
+            background-position: center; */
+            /* opacity: 0.5; */
+            width: 20%;
+            margin: 1rem auto;
+            background: #e2dada; 
+            padding: 1rem;
+            border-radius: 10px;
+            /* border: 4px solid #29669e; */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            
+        }
+        #schedule h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        #schedule ul {
+            padding: 0;
+            list-style: none;
+        }
+        #schedule li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: #f9f1e7;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        #schedule li:hover {
+            transform: scale(1.02);
+        }
+        #schedule li span.time {
+            font-weight: bold;
+            color: #8e24aa;
+            font-size: 1rem;
+        }
+        #schedule li span.event {
+            color: #333;
+            font-size: 0.9rem;
+        }
+        /* Golden Ribbon Styles */
+        #schedule::before,
+        #schedule::after {
+            content: '';
+            position: absolute;
+            background: linear-gradient(45deg, #d4af37, #f1c40f);
+            height: 20px;
+            width: 120px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+        #schedule::before {
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-5deg);
+        }
+        #schedule::after {
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(5deg);
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+            .image-container {
+                border-width: 0px;
+                width: 90%;
+                padding: 0.5px;
+            }
+            .message, .rsvp-form, .countdown, #schedule {
+                width: 90%;
+                padding: 1px;
+            }
+            .organizational-images img, .dress-code-images img {
+                width: 90%;
+                max-width: 100px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+                gap: 0.4rem;
+            }
+            .scroll-down {
+                font-size: 0.9rem;
+            }
+            .map iframe {
+                height: 150px;
+            }
+            input, select, textarea, button {
+                font-size: 0.8rem;
+            }
+            .fab {
+                width: 40px;
+                height: 40px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 1rem;
+            }
+            .fab::after {
+                font-size: 0.7rem;
+                right: 50px;
+                padding: 0.15rem 0.4rem;
+            }
+            #schedule h2 {
+                font-size: 1.4rem;
+            }
+            #schedule li {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+            #schedule::before,
+            #schedule::after {
+                height: 15px;
+                width: 90px;
+            }
+        }
+
+        .flower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url('https://www.transparenttextures.com/patterns/small-flowers.png') no-repeat;
+            background-size: contain;
+            animation: float 10s infinite;
+            z-index: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-100px); }
+        }
+        .flower:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .flower:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .flower:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .flower:nth-child(4) { left: 40%; animation-delay: 6s; }
+        .flower:nth-child(5) { left: 50%; animation-delay: 1s; }
+        .flower:nth-child(6) { left: 60%; animation-delay: 3s; }
+        .flower:nth-child(7) { left: 70%; animation-delay: 5s; }
+        .flower:nth-child(8) { left: 80%; animation-delay: 7s; }
+    </style>
+
+</head>
+<body>
+    <!-- <header>
+       
+        <h2>27.09.2025</h2>
+        <img class="floral" src="Flowering.png" alt="Floral decoration"> -->
+    <!-- </header> -->
+
+    <div class="message" style="background-color: #ededed; color: #1a252f; font-style: italic; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+         <h1>💍 Emma & Glory 💍</h1>
+       <h2>27.09.2025</h2>
+    </div>
+    <audio id="background-music" autoplay loop muted>
+        <source src="GoodnessofGod.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="audio-toggle" class="fab" title="Toggle Music">▶</div>
+    <div class="image-container">
+        <img src="eg1.jpg" alt="Wedding Photo">
+    </div>
+    <div class="scroll-down">Scroll down <span>↓</span></div>
+
+    <div class="message">
+        <p>Dear friends and family,</p>
+        <p>We are delighted to share the joyous occasion of our wedding with you! Please join us as we celebrate love, laughter, and new beginnings..</p>
+        <p>With love, Emma & Glory</p>
+    </div>
+    <div class="countdown" id="countdown"></div>
+
+    <!-- <section id="schedule">
+
+    <div class="gallery-grid">
+        <img src="emmaandgloria.jpg" alt="Wedding Photo">
+    </div>
+        <h2>Programme Outline</h2>
+        <ul>
+            <li><span class="time">12:00</span><span class="event">Ceremony</span></li>
+            <li><span class="time">13:30</span><span class="event">Transfer</span></li>
+            <li><span class="time">14:00</span><span class="event">Cocktail</span></li>
+            <li><span class="time">15:00</span><span class="event">First Dance</span></li>
+            <li><span class="time">15:30</span><span class="event">Dinner</span></li>
+            <li><span class="time">16:00</span><span class="event">Cake Cutting</span></li>
+            <li><span class="time">17:00</span><span class="event">Party</span></li>
+            <li><span class="time">21:00</span><span class="event">Closing</span></li>
+        </ul>
+    </section> -->
+
+  <div class="message" style="background-color: #ededed; color: #1a252f;">
+        <h2>Colours</h2>
+        <p>We would be very happy if your outfit will be in the colours of the wedding theme.</p>
+        <div class="dress-code-colors">
+            <div style="background-color: #f8e1e1;"></div>
+            <div style="background-color: #493f07;"></div>
+            <div style="background-color: #00B1FF;"></div>
+            <div style="background-color: #1800ad;"></div> 
+        </div>
+    </div>
+<div style="display: flex; flex-direction: row-reverse; flex-wrap: wrap;">
+  <div class="gallery-item"><img src="eg7.jpg" alt="Bride"></div>
+  <div class="gallery-item"><img src="eg2.jpg" alt="Bride"></div> 
+  </div>  
+  <div style="display: flex; flex-direction: row-reverse; flex-wrap: wrap;">
+  <div class="gallery-item"><img src="eg4.jpg" alt="Bride"></div>
+  <div class="gallery-item"><img src="eg8.jpg" alt="Bride"></div> 
+  </div>  
+    <section id="location">
+        <h2>Directions</h2>
+        <div class="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d26658.629224308723!2d-1.6295719046965278!3d6.668107901973541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0xfdb955dc393fcc7%3A0x5b8d29924e3c7ec3!2sKnust%20campus%2C%20Kumasi!3m2!1d6.6618376!2d-1.5824192!4m5!1s0xfdb9716b4fc6a01%3A0xde4e4d813662b5de!2sM8QX%2B2JH%20Beulah%20SDA%20Chucrh%2C%20Kumasi!3m2!1d6.6875621999999995!2d-1.6508961!5e0!3m2!1sen!2sgh!4v1754995067476!5m2!1sen!2sgh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <div class="message">
+        <h2>RSVP</h2>
+        <p>Please contact Klinch or Alex for any information</p>
+        <p><strong>0246756080</strong></p>
+        <p><strong>0249728835</strong></p>
+        <div class="organizational-images">
+            
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="eg6.jpg" alt="Wedding Photo">
+
+    </div>
+    <section id="donation", style="font-family: Arial, sans-serif;">
+        <h2>Send a Gift via Mobile Money:</h2>
+        <p><strong>0505923054</strong></p>
+        <p><strong>0506919393</strong></p>
+    </section>
+
+    <div class="message" style="background-color: #ededed; color: #1a252f;">
+        <p>Hope to see you there!</p>
+        <p>💞💝 Emma & Glory 💝💞</p>
+    </div>
+    <script>
+        const countdown = document.getElementById('countdown');
+        const weddingDate = new Date(Date.UTC(2025, 8, 27, 0, 0, 0)); // September 27, 2025
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = weddingDate - now;
+            if (diff <= 0) {
+                countdown.innerText = "The wedding day is here! 💍";
+                return;
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            countdown.innerText = `${days} days : ${hours} hours : ${minutes} minutes : ${seconds} seconds`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Audio Control
+        const audio = document.getElementById('background-music');
+        const audioToggle = document.getElementById('audio-toggle');
+        audio.volume = 0.3; // Set low volume for background music
+
+        // Attempt to unmute after page load
+        audio.muted = false;
+        audio.play().catch(() => {
+            audioToggle.textContent = '▶';
+        });
+
+        audioToggle.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                audioToggle.textContent = '❚❚';
+            } else {
+                audio.pause();
+                audioToggle.textContent = '▶';
+            }
+        });
+
+        // RSVP Form Submission
+        document.getElementById('submit-rsvp').addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
+            const drinks = Array.from(document.querySelectorAll('input[name="drink"]:checked')).map(input => input.value);
+
+            if (!name || !attendance || drinks.length === 0) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            console.log({
+                name: name,
+                attendance: attendance,
+                drinks: drinks
+            });
+            alert('Thank you for your RSVP!');
+        });
+    </script>
+</body>
+</html>
