@@ -1,7 +1,7 @@
 from PIL import Image
 
 # Open image
-img = Image.open("eg1.jpg")
+img = Image.open("eg4.jpg")
 
 # Resize to 200x200
 img_resized = img.resize((200, 200))
